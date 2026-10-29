@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f6f4f">
+<meta name="description" content="Track CBSE Class 10 syllabus progress for the 2026–27 session.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>CBSE Class 10 Checklist 2026–27</title>
+<style>
+:root{--bg:#faf9f6;--card:#fff;--tx:#1f1d1a;--mut:#6b675f;--bd:#e6e2d9;--ac:#2f6f4f;--tr:#e6e2d9;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171614;--card:#222120;--tx:#efece6;--mut:#a09c93;--bd:#35332f;--ac:#6cc79a;--tr:#35332f}}
+:root[data-theme="dark"]{--bg:#171614;--card:#222120;--tx:#efece6;--mut:#a09c93;--bd:#35332f;--ac:#6cc79a;--tr:#35332f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:640px;margin:0 auto;padding:16px 14px 40px}
+h1{font-size:1.3rem;margin:0 0 2px}
+.sub{color:var(--mut);font-size:.85rem;margin:0 0 14px}
+.bar{height:8px;background:var(--tr);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ac);transition:width .25s}
+.tot{display:flex;justify-content:space-between;font-size:.9rem;margin:6px 0 16px}
+details{background:var(--card);border:1px solid var(--bd);border-radius:12px;margin-bottom:10px;overflow:hidden}
+summary{list-style:none;cursor:pointer;padding:13px 14px;display:flex;align-items:center;gap:10px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary .n{margin-left:auto;font-weight:400;color:var(--mut);font-size:.85rem}
+summary:after{content:"▾";color:var(--mut)}
+details[open] summary:after{content:"▴"}
+.mini{height:4px;background:var(--tr)}.mini i{display:block;height:100%;width:0;background:var(--ac)}
+.g{padding:8px 14px 2px;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+label{display:flex;gap:12px;align-items:flex-start;padding:10px 14px;border-top:1px solid var(--bd);cursor:pointer}
+input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--ac);flex:none}
+input:checked+span{color:var(--mut);text-decoration:line-through}
+.note{color:var(--mut);font-size:.8rem;margin-top:14px}
+button{margin-top:10px;background:none;border:1px solid var(--bd);color:var(--mut);border-radius:8px;padding:8px 12px;font:inherit;font-size:.85rem}
+.install{display:none;background:var(--ac);color:#fff;border-color:var(--ac);font-weight:600;margin-right:8px}
+.install.show{display:inline-block}
+.apphint{font-size:.78rem;color:var(--mut);margin:0 0 12px}
+</style></head><body><main>
+<h1>CBSE Class 10 Checklist</h1>
+<p class="sub">Session 2026–27 · Board exams 2027</p>
+<div class="bar"><i id="ob"></i></div>
+<div class="tot"><span id="op">0%</span><span id="oc"></span></div>
+<div id="app"></div>
+<p class="apphint">Tip: install this checklist to your home screen for an app-like, full-screen experience. It also works offline after the first successful load.</p>
+<p class="note">Chapters follow the NCERT books named in CBSE’s 2026–27 syllabus. Hindi A and AI lists are from CBSE’s 2026–27 documents, but chapters can differ slightly by school, so confirm with your teacher and the PDFs at cbseacademic.nic.in. Your ticks are saved on this device.</p>
+<button id="install" class="install" type="button">Install app</button><button id="rs">Reset all ticks</button>
+</main>
+<script>
+var D=[
+["Mathematics",[["Chapters",["Real Numbers","Polynomials","Pair of Linear Equations in Two Variables","Quadratic Equations","Arithmetic Progressions","Triangles","Coordinate Geometry","Introduction to Trigonometry","Some Applications of Trigonometry","Circles","Areas Related to Circles","Surface Areas and Volumes","Statistics","Probability"]]]],
+["Science",[["Chemistry",["Chemical Reactions and Equations","Acids, Bases and Salts","Metals and Non-metals","Carbon and its Compounds"]],["Biology",["Life Processes","Control and Coordination","How do Organisms Reproduce?","Heredity","Our Environment"]],["Physics",["Light – Reflection and Refraction","The Human Eye and the Colourful World","Electricity","Magnetic Effects of Electric Current"]],["Practicals",["Science practical experiments (internal assessment)"]]]],
+["Social Science",[["History",["The Rise of Nationalism in Europe","Nationalism in India","The Making of a Global World","The Age of Industrialisation","Print Culture and the Modern World"]],["Geography",["Resources and Development","Forest and Wildlife Resources","Water Resources","Agriculture","Minerals and Energy Resources","Manufacturing Industries","Lifelines of the National Economy"]],["Political Science",["Power Sharing","Federalism","Gender, Religion and Caste","Political Parties","Outcomes of Democracy"]],["Economics",["Development","Sectors of the Indian Economy","Money and Credit","Globalisation and the Indian Economy","Consumer Rights"]],["Extra",["Map pointing (History + Geography)"]]]],
+["English (Language & Literature)",[["Skills",["Reading comprehension","Writing skills (letter, article, etc.)","Grammar"]],["First Flight – Prose",["A Letter to God","Nelson Mandela: Long Walk to Freedom","Stories About Flying","From the Diary of Anne Frank","Glimpses of India","Mijbil the Otter","Madam Rides the Bus","The Sermon at Benares","The Proposal (Play)"]],["First Flight – Poetry",["Dust of Snow","Fire and Ice","A Tiger in the Zoo","How to Tell Wild Animals","The Ball Poem","Amanda!","The Trees","Fog","The Tale of Custard the Dragon","For Anne Gregory"]],["Footprints Without Feet",["A Triumph of Surgery","The Thief’s Story","The Midnight Visitor","A Question of Trust","Footprints without Feet","The Making of a Scientist","The Necklace","Bholi","The Book That Saved the Earth"]]]],
+["हिंदी (Hindi A)",[["क्षितिज भाग 2 – काव्य",["सूरदास – पद","तुलसीदास – राम-लक्ष्मण-परशुराम संवाद","जयशंकर प्रसाद – आत्मकथ्य","निराला – उत्साह; अट नहीं रही है"]],["क्षितिज भाग 2 – गद्य",["नेताजी का चश्मा","बालगोबिन भगत","लखनवी अंदाज़","एक कहानी यह भी","नौबतखाने में इबादत","संस्कृति"]],["कृतिका भाग 2",["माता का आँचल","साना-साना हाथ जोड़ि…","मैं क्यों लिखता हूँ"]],["व्याकरण और लेखन",["अपठित गद्यांश और काव्यांश","रचना के आधार पर वाक्य","वाच्य","पद परिचय","अलंकार (अर्थालंकार)","अनुच्छेद लेखन","पत्र लेखन","सूचना / ई-मेल लेखन","विज्ञापन / संदेश लेखन"]]]],
+["Artificial Intelligence (417)",[["Part A – Employability Skills",["Communication Skills-II","Self-Management Skills-II","ICT Skills-II","Entrepreneurial Skills-II","Green Skills-II"]],["Unit 1 – AI Project Cycle & Ethics",["Revisiting the AI Project Cycle","Introduction to AI domains","Ethical frameworks of AI (incl. bioethics)"]],["Unit 2 – Advanced Modeling",["AI vs ML vs DL, data terms","Rule-based vs learning-based models","Supervised, unsupervised, reinforcement learning","Classification, regression, clustering, association","Neural networks (ANN, CNN) and how AI decides"]],["Unit 3 – Evaluating Models",["Importance of model evaluation","Train-test split","Accuracy and error","Classification metrics: confusion matrix, precision, recall, F1","Ethical concerns in evaluation"]],["Unit 4 – Statistical Data (practical)",["Intro and no-code AI tools","Orange Data Mining: Palmer penguins case"]],["Unit 5 – Computer Vision",["Introduction and applications","Pixels, grayscale and RGB images","No-code tools: Teachable Machine, Orange (practical)","Image features and convolution operator","Convolutional Neural Network (CNN)"]],["Unit 6 – Natural Language Processing",["Introduction and applications","Stages of NLP","Chatbots: script bot vs smart bot","Text normalisation, bag of words, TFIDF","Sentiment analysis (practical)"]],["Unit 7 – Advance Python (practical)",["Jupyter Notebook recap","Python basics","Built-in functions and libraries"]],["Part C – Practical and Project",["Practical file (minimum 15 programs)","Practical exam and viva","Project / field visit / portfolio (min. 5 activities)"]]]]
+];
+var K="cbse10-2627",S={};try{S=JSON.parse(localStorage.getItem(K)||"{}")}catch(e){}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+var app=document.getElementById("app"),boxes=[];
+D.forEach(function(s,si){
+var d=document.createElement("details");if(si<3)d.open=true;
+var sm=document.createElement("summary");sm.innerHTML='<span>'+s[0]+'</span><span class="n"></span>';
+var mi=document.createElement("div");mi.className="mini";mi.innerHTML="<i></i>";
+d.appendChild(sm);d.appendChild(mi);var mine=[];
+s[1].forEach(function(g,gi){
+if(s[1].length>1){var h=document.createElement("div");h.className="g";h.textContent=g[0];d.appendChild(h)}
+g[1].forEach(function(t,ti){
+var id=si+"-"+gi+"-"+ti,l=document.createElement("label"),c=document.createElement("input");
+c.type="checkbox";c.checked=!!S[id];
+c.onchange=function(){if(c.checked)S[id]=1;else delete S[id];save();upd()};
+var sp=document.createElement("span");sp.textContent=t;l.appendChild(c);l.appendChild(sp);d.appendChild(l);
+mine.push(c);boxes.push(c)});
+});
+d._m=mine;d._n=sm.querySelector(".n");d._b=mi.firstChild;app.appendChild(d)});
+function upd(){
+var all=boxes.length,done=boxes.filter(function(b){return b.checked}).length,p=Math.round(100*done/all);
+document.getElementById("ob").style.width=p+"%";
+document.getElementById("op").textContent=p+"% done";
+document.getElementById("oc").textContent=done+" / "+all+" items";
+app.querySelectorAll("details").forEach(function(d){
+var n=d._m.length,k=d._m.filter(function(b){return b.checked}).length;
+d._n.textContent=k+"/"+n;d._b.style.width=(100*k/n)+"%"})}
+document.getElementById("rs").onclick=function(){
+if(!confirm("Clear all ticks?"))return;S={};save();boxes.forEach(function(b){b.checked=false});upd()};
+upd();
+
+// PWA: cache the app shell so the checklist opens offline after its first online visit.
+(function(){
+  var installBtn=document.getElementById('install');
+  var deferredPrompt=null;
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault(); deferredPrompt=e; installBtn.classList.add('show');
+  });
+  installBtn.addEventListener('click',async function(){
+    if(!deferredPrompt){
+      alert('To install: open your browser menu and choose “Install app” or “Add to Home screen”.');
+      return;
+    }
+    deferredPrompt.prompt();
+    try{await deferredPrompt.userChoice;}catch(e){}
+    deferredPrompt=null; installBtn.classList.remove('show');
+  });
+  window.addEventListener('appinstalled',function(){installBtn.classList.remove('show');});
+  if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){
+    window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(err){console.warn('Offline support could not be enabled:',err);});});
+  }
+})();
+</script></body></html>
